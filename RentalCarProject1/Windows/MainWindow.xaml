@@ -1,0 +1,61 @@
+﻿<Window x:Class="RentalCarProject1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RentalCarProject1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Login" Height="760" Width="450"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+
+
+    <materialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}"
+        Margin="25" materialDesign:ShadowAssist.ShadowDepth="Depth4">
+        <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost" >
+            <StackPanel MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftDown">
+                <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0" 
+                    PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25">
+
+                    <StackPanel>
+                        <Button x:Name="btn_helpme" ToolTip="Проблемы со входом в систему?" Margin="0 8 0 0" Content="Помогите мне" Click="helpMe"
+                         />
+                        <Button x:Name="btn_exit" ToolTip="Закрывает приложение" Content="Выход" Click="exitApp"/>
+                    </StackPanel>
+
+                </materialDesign:PopupBox>
+
+                <Image Margin="0 60 0 5" Source="D:\RentalCarProject\RentalCarProject1\RentalCarProject1\Resources\web-development.png" Height="100"/>
+
+                <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="28"
+                 FontWeight="Bold" Text="Добро пожаловать!"/>
+
+                <TextBlock FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center"
+                 Text="Войдите в свой существующий аккаунт"/>
+
+                <TextBox Margin="0 50 0 0" x:Name="UserName" Width="300" FontSize="18"
+                 materialDesign:HintAssist.Hint="Введите Имя и Фамилию" BorderThickness="2"
+                 BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                />
+
+                <PasswordBox Margin="0 20 0 0" x:Name="UserPass" Width="300" FontSize="18"
+                 materialDesign:HintAssist.Hint="Введите номер паспорта" BorderThickness="2"
+                 BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
+                />
+
+                <Button Margin="0 20 0 0" x:Name="LoginButton" Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                 materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="15"
+                 FontSize="18" Content="ВОЙТИ" Click="LoginButton_Click" Cursor="Hand" />
+
+                <Button Margin="0 20 0 0" x:Name="Guest" Style="{StaticResource MaterialDesignFlatButton}" 
+                 materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="15"
+                 FontSize="18" Content="ВОЙТИ ГОСТЕМ" Click="GuestButton_Click"/>
+
+            </StackPanel>
+        </materialDesign:DialogHost>
+    </materialDesign:Card>
+</Window>
