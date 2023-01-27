@@ -7,28 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RentalCarProject1.Resources
+namespace RentalCarProject1
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Client
+    public partial class Role
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Client()
+        public Role()
         {
-            this.Rentals = new HashSet<Rental>();
+            this.Operators = new HashSet<Operator>();
         }
     
-        public int id_client { get; set; }
-        public string client_name { get; set; }
-        public string client_middlename { get; set; }
-        public Nullable<int> client_passport_serial { get; set; }
-        public string client_passport_number { get; set; }
-        public Nullable<int> client_role { get; set; }
+        public int id_role { get; set; }
+        public string role_name { get; set; }
     
-        public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rental> Rentals { get; set; }
+        public virtual ICollection<Operator> Operators { get; set; }
     }
 }

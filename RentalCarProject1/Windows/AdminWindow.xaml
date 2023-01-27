@@ -57,12 +57,12 @@
 
                         <!--#Dashboard-->
                         <StackPanel DockPanel.Dock="Top">
-                            <Button Style="{StaticResource menuButton}"
-                                    materialDesign:ShadowAssist.ShadowDepth="Depth0" materialDesign:ButtonAssist.CornerRadius="10"
+                            <Button x:Name="btn_Products" Style="{StaticResource menuButton}"
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth0" materialDesign:ButtonAssist.CornerRadius="10" Click="btn_Products_Click"
                                     >
                                 <StackPanel Orientation="Horizontal">
-                                    <Icon:PackIconMaterial Kind="Home" Width="15" Height="15" Margin="20 2 20 0"/>
-                                    <TextBlock Text="Машины"/>
+                                    <Icon:PackIconMaterial Kind="Shopping" Width="15" Height="15" Margin="20 2 20 0"/>
+                                    <TextBlock Text="Продукты"/>
                                 </StackPanel>
                             </Button>
 
@@ -72,12 +72,12 @@
 
                         <!--#region -->
                         <StackPanel DockPanel.Dock="Top">
-                            <Button Style="{StaticResource menuButton}"
-                                    materialDesign:ShadowAssist.ShadowDepth="Depth0" materialDesign:ButtonAssist.CornerRadius="10"
+                            <Button x:Name="btn_Operators" Style="{StaticResource menuButton}"
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth0" materialDesign:ButtonAssist.CornerRadius="10" Click="btn_Operators_Click"
                                     >
                                 <StackPanel Orientation="Horizontal">
-                                    <Icon:PackIconMaterial Kind="Car" Width="15" Height="15" Margin="20 2 20 0"/>
-                                    <TextBlock Text="Запись на прокат" />
+                                    <Icon:PackIconMaterial Kind="Diamond" Width="15" Height="15" Margin="20 2 20 0"/>
+                                    <TextBlock Text="Сотрудники" />
                                 </StackPanel>
                             </Button>
 
@@ -87,8 +87,8 @@
 
                         <!--#region -->
                         <StackPanel DockPanel.Dock="Top">
-                            <Button x:Name="Clients" Style="{StaticResource menuButton}" 
-                                    materialDesign:ShadowAssist.ShadowDepth="Depth0" materialDesign:ButtonAssist.CornerRadius="10" Click="Members"
+                            <Button x:Name="btn_Clients" Style="{StaticResource menuButton}" 
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth0" materialDesign:ButtonAssist.CornerRadius="10" Click="btn_Clients_Click"
                                     >
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="HumanMaleBoardPoll" Width="15" Height="15" Margin="20 2 20 0"/>
@@ -97,6 +97,33 @@
                             </Button>
 
                         </StackPanel>
+
+                        <StackPanel DockPanel.Dock="Top">
+                            <Button x:Name="btn_Storages" Style="{StaticResource menuButton}" 
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth0" materialDesign:ButtonAssist.CornerRadius="10" Click="btn_Storages_Click"
+                                    >
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="StoreMarker" Width="15" Height="15" Margin="20 2 20 0"/>
+                                    <TextBlock Text="Склады" />
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+
+
+                        <StackPanel DockPanel.Dock="Top">
+                            <Button x:Name="btn_Delivery" Style="{StaticResource menuButton}" 
+                                    materialDesign:ShadowAssist.ShadowDepth="Depth0" materialDesign:ButtonAssist.CornerRadius="10" Click="btn_Delivery_Click"
+                                    >
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="TruckDelivery" Width="15" Height="15" Margin="20 2 20 0"/>
+                                    <TextBlock Text="Доставка" />
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+
+
                         <!--#endregion-->
 
                         <!--#region -->

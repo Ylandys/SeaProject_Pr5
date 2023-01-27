@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "D:\RentalCarProject\RentalCarProject1\RentalCarProject1\Resources\RentalCarProject.edmx" включено. 
+﻿// Создание кода T4 для модели "D:\RentalCarProject\RentalCarProject1\RentalCarProject1\StoreSea.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

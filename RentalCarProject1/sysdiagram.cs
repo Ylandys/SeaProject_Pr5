@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RentalCarProject1.Resources
+namespace RentalCarProject1
 {
     using System;
     using System.Collections.Generic;

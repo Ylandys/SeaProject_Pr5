@@ -7,26 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RentalCarProject1.Resources
+namespace RentalCarProject1
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Car
+    public partial class Storage
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Car()
+        public Storage()
         {
-            this.Rentals = new HashSet<Rental>();
+            this.Deliveries = new HashSet<Delivery>();
         }
     
-        public int id_car { get; set; }
-        public string car_model { get; set; }
-        public string car_color { get; set; }
-        public Nullable<System.DateTime> car_year { get; set; }
-        public string car_number { get; set; }
+        public int id_storage { get; set; }
+        public string storage_name { get; set; }
+        public string storage_address { get; set; }
+        public int operator_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rental> Rentals { get; set; }
+        public virtual ICollection<Delivery> Deliveries { get; set; }
+        public virtual Operator Operator { get; set; }
     }
 }

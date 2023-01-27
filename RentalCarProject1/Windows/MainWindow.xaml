@@ -38,22 +38,18 @@
                  Text="Войдите в свой существующий аккаунт"/>
 
                 <TextBox Margin="0 50 0 0" x:Name="UserName" Width="300" FontSize="18"
-                 materialDesign:HintAssist.Hint="Введите Имя и Фамилию" BorderThickness="2"
+                 materialDesign:HintAssist.Hint="Введите логин" BorderThickness="2"
                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 />
 
                 <PasswordBox Margin="0 20 0 0" x:Name="UserPass" Width="300" FontSize="18"
-                 materialDesign:HintAssist.Hint="Введите номер паспорта" BorderThickness="2"
+                 materialDesign:HintAssist.Hint="Введите пароль" BorderThickness="2"
                  BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
                 />
 
                 <Button Margin="0 20 0 0" x:Name="LoginButton" Style="{StaticResource MaterialDesignFlatMidBgButton}"
                  materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="15"
                  FontSize="18" Content="ВОЙТИ" Click="LoginButton_Click" Cursor="Hand" />
-
-                <Button Margin="0 20 0 0" x:Name="Guest" Style="{StaticResource MaterialDesignFlatButton}" 
-                 materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="15"
-                 FontSize="18" Content="ВОЙТИ ГОСТЕМ" Click="GuestButton_Click"/>
 
             </StackPanel>
         </materialDesign:DialogHost>

@@ -1,17 +1,6 @@
-﻿using RentalCarProject1.Resources;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace RentalCarProject1.Windows
 {
@@ -20,11 +9,11 @@ namespace RentalCarProject1.Windows
     /// </summary>
     public partial class AddNewClient : Window
     {
-        RentalCarProjectEntities2 db;
+        StorageSeaEntities1 db;
         public AddNewClient()
         {
             InitializeComponent();
-            db = new RentalCarProjectEntities2();
+            db = new StorageSeaEntities1();
         }
 
 
@@ -59,7 +48,7 @@ namespace RentalCarProject1.Windows
 
         private void btn_addClient(object sender, RoutedEventArgs e)
         {
-            Car car= new Car();
+           /* Car car= new Car();
 
             //Добавление вводимых данных в базу
             car.car_model= car_model.Text;
@@ -80,7 +69,7 @@ namespace RentalCarProject1.Windows
 
                 MessageBox.Show(ex.Message);
             }
-
+           */
         }
 
         private void btn_exitClick(object sender, RoutedEventArgs e)

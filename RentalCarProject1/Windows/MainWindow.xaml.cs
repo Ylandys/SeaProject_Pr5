@@ -1,19 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MaterialDesignThemes.Wpf;
-using RentalCarProject1.Resources;
 using RentalCarProject1.Windows;
 
 namespace RentalCarProject1
@@ -24,7 +11,7 @@ namespace RentalCarProject1
     public partial class MainWindow : Window
     {
         //EntitnyConnection
-        RentalCarProjectEntities2 database = new RentalCarProjectEntities2(); //вот это пиши так же
+        StorageSeaEntities1 database = new StorageSeaEntities1();
         public MainWindow()
         {
             InitializeComponent();
@@ -41,37 +28,31 @@ namespace RentalCarProject1
         {
             Roles roles = new Roles();
             //Variables
-            var login = UserName.Text; //это пиши
-            var pass= UserPass.Password; //это пиши
+            var login = UserName.Text; 
+            var pass= UserPass.Password;
 
-            if (database.Clients.Any(u => u.client_name == login && u.client_passport_number == pass)) //это
+            if (database.Operators.Any(u => u.operator_login == login && u.operator_password == pass)) 
             {
 
-                foreach (var client in database.Clients) //это
+                foreach (var _operator in database.Operators)
                 {
-                    if (client.client_name == login) //измени тут на if(client.Логин == login && client.Пароль == pass)
-                                                     //{
-                                                           // this.Visibility = Visibility.Collapsed;
-                                                           //тут админ виндов - следуещее окно так что там хз какое у тебя пропиши сам
-                                                            //AdminWindow administratorWindow = new AdminWindow();
-                                                            //administratorWindow.Show();
-                                                      //}
+                    if (_operator.operator_login == login)
                     {
-                        if (client.client_passport_number == pass)
+                        if (_operator.operator_password == pass)
                         {
-                            var role = database.Roles.Find(client.client_role);
+                            var role = database.Roles.Find(_operator.role_id);
 
                             roles.UserLogin = login;
-                            roles.UserRole = role.Role1;
+                            roles.UserRole = role.role_name;
                             this.Visibility = Visibility.Collapsed;
                             AdminWindow administratorWindow = new AdminWindow(roles.UserLogin, roles.UserRole);
                             administratorWindow.Show();                     
 
 
                         }
-                        else //это
+                        else //exc
                         {
-                            MessageBox.Show("Вы ввели неправильный пароль"); //это
+                            MessageBox.Show("Вы ввели неправильный пароль");
                         }
                     }
                 }
@@ -85,7 +66,7 @@ namespace RentalCarProject1
 
         private void helpMe(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Иди нахуй кто тебе поможет? Дебил блять...");
+            MessageBox.Show("Ты можешь помочь сам себе)");
         }
 
         private void GuestButton_Click(object sender, RoutedEventArgs e)

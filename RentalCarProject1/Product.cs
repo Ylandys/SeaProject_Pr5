@@ -7,22 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RentalCarProject1.Resources
+namespace RentalCarProject1
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Rental
+    public partial class Product
     {
-        public int id_rental { get; set; }
-        public Nullable<decimal> cost_oneday_rental { get; set; }
-        public Nullable<System.DateTime> rental_start_day { get; set; }
-        public Nullable<int> rental_days { get; set; }
-        public Nullable<decimal> car_insurance_value { get; set; }
-        public Nullable<int> id_client { get; set; }
-        public Nullable<int> id_car { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Product()
+        {
+            this.Deliveries = new HashSet<Delivery>();
+        }
     
-        public virtual Car Car { get; set; }
-        public virtual Client Client { get; set; }
+        public int id_product { get; set; }
+        public string product_name { get; set; }
+        public decimal product_price { get; set; }
+        public int product_quantity { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Delivery> Deliveries { get; set; }
     }
 }

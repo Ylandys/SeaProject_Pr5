@@ -1,12 +1,6 @@
-﻿using RentalCarProject1.Resources;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Data.Entity;
+﻿using System;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
@@ -18,7 +12,7 @@ namespace RentalCarProject1.Windows
     public partial class AdminWindow : Window
     {
         //variables
-        RentalCarProjectEntities2 database = new RentalCarProjectEntities2();
+        StorageSeaEntities1 database = new StorageSeaEntities1();
         public AdminWindow(string UserLogin, string Roles)
         {
             
@@ -44,7 +38,6 @@ namespace RentalCarProject1.Windows
             {
                 Image.ImageSource = new BitmapImage(new Uri("D:\\RentalCarProject\\RentalCarProject1\\RentalCarProject1\\Resources\\unknown.png", UriKind.Absolute));
             }
-           
 
         }
 
@@ -83,19 +76,65 @@ namespace RentalCarProject1.Windows
             MW.Show();
         }
 
-        public void Members(object sender, RoutedEventArgs e)
+        private void btn_Products_Click(object sender, RoutedEventArgs e)
         {
             string roles = Role.Text;
-               
-            if(roles == "Роль: Admin" || roles == "Роль: Manager")
+
+            if (roles == "Роль: Admin" || roles == "Роль: Manager")
             {
-                Main.Content = new Cars();
+                Main.Content = new ProductsPage();
             }
             else
             {
                 MessageBox.Show("Недостаточно прав для совершения этой операции!");
             }
+        }
 
+        private void btn_Storages_Click(object sender, RoutedEventArgs e)
+        {
+            string roles = Role.Text;
+
+            if (roles == "Роль: Admin" || roles == "Роль: Manager")
+            {
+                Main.Content = new Storages();
+            }
+            else
+            {
+                MessageBox.Show("Недостаточно прав для совершения этой операции!");
+            }
+        }
+
+        private void btn_Clients_Click(object sender, RoutedEventArgs e)
+        {
+            string roles = Role.Text;
+
+            if (roles == "Роль: Admin" || roles == "Роль: Manager")
+            {
+                Main.Content = new Clients();
+            }
+            else
+            {
+                MessageBox.Show("Недостаточно прав для совершения этой операции!");
+            }
+        }
+
+        private void btn_Delivery_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Operators_Click(object sender, RoutedEventArgs e)
+        {
+            string roles = Role.Text;
+
+            if (roles == "Роль: Admin")
+            {
+                Main.Content = new Operators();
+            }
+            else
+            {
+                MessageBox.Show("Недостаточно прав для совершения этой операции!");
+            }
         }
     }
 }

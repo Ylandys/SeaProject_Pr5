@@ -7,29 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RentalCarProject1.Resources
+namespace RentalCarProject1
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RentalCarProjectEntities2 : DbContext
+    public partial class StorageSeaEntities1 : DbContext
     {
-
-        private static RentalCarProjectEntities2 _context;
-
-        public RentalCarProjectEntities2()
-            : base("name=RentalCarProjectEntities2")
+        public StorageSeaEntities1()
+            : base("name=StorageSeaEntities1")
         {
-        }
-
-        public RentalCarProjectEntities2 GetContext()
-        { 
-            if (_context == null)
-            {
-                _context = new RentalCarProjectEntities2();
-            }
-            return _context;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -37,10 +25,12 @@ namespace RentalCarProject1.Resources
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Car> Cars { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
-        public virtual DbSet<Rental> Rentals { get; set; }
+        public virtual DbSet<Delivery> Deliveries { get; set; }
+        public virtual DbSet<Operator> Operators { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Storage> Storages { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

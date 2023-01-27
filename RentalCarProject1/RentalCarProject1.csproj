@@ -78,35 +78,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Resources\Car.cs">
-      <DependentUpon>RentalCarProject.tt</DependentUpon>
+    <Compile Include="Client.cs">
+      <DependentUpon>StoreSea.tt</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Client.cs">
-      <DependentUpon>RentalCarProject.tt</DependentUpon>
+    <Compile Include="Delivery.cs">
+      <DependentUpon>StoreSea.tt</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Rental.cs">
-      <DependentUpon>RentalCarProject.tt</DependentUpon>
+    <Compile Include="Operator.cs">
+      <DependentUpon>StoreSea.tt</DependentUpon>
     </Compile>
-    <Compile Include="Resources\RentalCarProject.Context.cs">
+    <Compile Include="Product.cs">
+      <DependentUpon>StoreSea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>StoreSea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Storage.cs">
+      <DependentUpon>StoreSea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreSea.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RentalCarProject.Context.tt</DependentUpon>
+      <DependentUpon>StoreSea.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Resources\RentalCarProject.cs">
+    <Compile Include="StoreSea.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RentalCarProject.tt</DependentUpon>
+      <DependentUpon>StoreSea.tt</DependentUpon>
     </Compile>
-    <Compile Include="Resources\RentalCarProject.Designer.cs">
+    <Compile Include="StoreSea.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RentalCarProject.edmx</DependentUpon>
+      <DependentUpon>StoreSea.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Role.cs">
-      <DependentUpon>RentalCarProject.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\sysdiagram.cs">
-      <DependentUpon>RentalCarProject.tt</DependentUpon>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>StoreSea.tt</DependentUpon>
     </Compile>
     <Compile Include="Windows\AddNewClient.xaml.cs">
       <DependentUpon>AddNewClient.xaml</DependentUpon>
@@ -114,10 +120,19 @@
     <Compile Include="Windows\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Cars.xaml.cs">
-      <DependentUpon>Cars.xaml</DependentUpon>
+    <Compile Include="Windows\Clients.xaml.cs">
+      <DependentUpon>Clients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Operators.xaml.cs">
+      <DependentUpon>Operators.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ProductsPage.xaml.cs">
+      <DependentUpon>ProductsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Roles.cs" />
+    <Compile Include="Windows\Storages.xaml.cs">
+      <DependentUpon>Storages.xaml</DependentUpon>
+    </Compile>
     <Page Include="Windows\AddNewClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -126,7 +141,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Cars.xaml">
+    <Page Include="Windows\Clients.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -142,6 +157,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\Operators.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Storages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -166,12 +193,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="Resources\RentalCarProject.edmx">
+    <EntityDeploy Include="StoreSea.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RentalCarProject.Designer.cs</LastGenOutput>
+      <LastGenOutput>StoreSea.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Resources\RentalCarProject.edmx.diagram">
-      <DependentUpon>RentalCarProject.edmx</DependentUpon>
+    <None Include="StoreSea.edmx.diagram">
+      <DependentUpon>StoreSea.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -190,15 +217,17 @@
     <Resource Include="Resources\unknown.png" />
     <Resource Include="Resources\user.png" />
     <Resource Include="Resources\man.png" />
-    <Content Include="Resources\RentalCarProject.Context.tt">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StoreSea.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RentalCarProject.edmx</DependentUpon>
-      <LastGenOutput>RentalCarProject.Context.cs</LastGenOutput>
+      <DependentUpon>StoreSea.edmx</DependentUpon>
+      <LastGenOutput>StoreSea.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Resources\RentalCarProject.tt">
+    <Content Include="StoreSea.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RentalCarProject.edmx</DependentUpon>
-      <LastGenOutput>RentalCarProject.cs</LastGenOutput>
+      <DependentUpon>StoreSea.edmx</DependentUpon>
+      <LastGenOutput>StoreSea.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
