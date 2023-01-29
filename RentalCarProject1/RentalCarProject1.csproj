@@ -123,6 +123,9 @@
     <Compile Include="Windows\Clients.xaml.cs">
       <DependentUpon>Clients.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Delivery.xaml.cs">
+      <DependentUpon>Delivery.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Operators.xaml.cs">
       <DependentUpon>Operators.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Clients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Delivery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

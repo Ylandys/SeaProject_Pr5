@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,39 +30,25 @@ namespace RentalCarProject1.Windows
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
 
-            /*db = new StorageSeaEntities1();
-            Car item = TableCars.SelectedItem as Car;
+            Button reda = sender as Button;
+            var reda1 = reda.DataContext as Client;
 
-            Car car = db.Cars.Where(c => c.id_car == item.id_car).Single();
+            AddNewClient newClientWindow = new AddNewClient(database, reda1);
+            newClientWindow.ShowDialog();
 
-            car.car_model = (TableCars.SelectedCells[1].Column.GetCellContent(item) as TextBlock).Text;
-            car.car_color = (TableCars.SelectedCells[2].Column.GetCellContent(item) as TextBlock).Text;
-            car.car_year = DateTime.Parse((TableCars.SelectedCells[3].Column.GetCellContent(item) as TextBlock).Text);
-            car.car_number= (TableCars.SelectedCells[4].Column.GetCellContent(item) as TextBlock).Text;
-
-            try
-            {
-                db.SaveChanges();
-                refreshdatagrid();  
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            */
+            refreshdatagrid();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             
 
-              /*  db = new RentalCarProjectEntities2();
-                Car item = TableCars.SelectedItem as Car;
+                db = new StorageSeaEntities1();
+                Client item = TableCars.SelectedItem as Client;
                 try
                 {
-                    Car car = db.Cars.Where(c => c.id_car == item.id_car).Single();
-                    db.Cars.Remove(car);
+                    Client client = db.Clients.Where(c => c.id_client == item.id_client).Single();
+                    db.Clients.Remove(client);
                     db.SaveChanges();
 
                     MessageBox.Show("Клиент успешно удалён!");
@@ -73,7 +60,6 @@ namespace RentalCarProject1.Windows
                 {
                     MessageBox.Show(ex.Message);
                 }
-            */
         }
 
         private void btn_AddClient(object sender, RoutedEventArgs e)
