@@ -174,7 +174,7 @@
           <Property Name="client_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="client_phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="store_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Deliveries" Relationship="Self.delivery_client_id_foreign" FromRole="Client" ToRole="Delivery" />
+          <NavigationProperty Name="Delivery" Relationship="Self.delivery_client_id_foreign" FromRole="Client" ToRole="Delivery" />
         </EntityType>
         <EntityType Name="Delivery">
           <Key>
@@ -228,7 +228,7 @@
           <Property Name="storage_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="storage_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="operator_name" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Deliveries" Relationship="Self.delivery_storage_id_foreign" FromRole="Storage" ToRole="Delivery" />
+          <NavigationProperty Name="Delivery" Relationship="Self.delivery_storage_id_foreign" FromRole="Storage" ToRole="Delivery" />
           <NavigationProperty Name="Operator" Relationship="Self.storage_operator_name_foreign" FromRole="Storage" ToRole="Operator" />
         </EntityType>
         <EntityType Name="sysdiagram">

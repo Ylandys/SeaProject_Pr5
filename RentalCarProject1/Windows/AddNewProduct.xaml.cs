@@ -16,24 +16,19 @@ using System.Windows.Shapes;
 namespace RentalCarProject1.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AddNewDelivery.xaml
+    /// Логика взаимодействия для AddNewProduct.xaml
     /// </summary>
-    public partial class AddNewDelivery : Window
+    public partial class AddNewProduct : Window
     {
         StorageSeaEntities1 database;
-        public AddNewDelivery(StorageSeaEntities1 db, Delivery delivery)
+        public AddNewProduct(StorageSeaEntities1 db, Product product)
         {
-            InitializeComponent();
             this.database = db;
-            this.DataContext = delivery;
+            this.DataContext = product;
+            InitializeComponent();
         }
 
-        private void btn_exitClick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void AddDeliveryButton_Click(object sender, RoutedEventArgs e)
+        private void AddProductButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -42,21 +37,21 @@ namespace RentalCarProject1.Windows
             }
             catch (DbEntityValidationException ex)
             {
-
                 foreach (DbEntityValidationResult validationError in ex.EntityValidationErrors)
                 {
-
                     MessageBox.Show("Object: " + validationError.Entry.Entity.ToString());
                     MessageBox.Show("");
-
                     foreach (DbValidationError err in validationError.ValidationErrors)
                     {
                         MessageBox.Show(err.ErrorMessage + "");
                     }
-
                 }
             }
+        }
 
+        private void btn_exitClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

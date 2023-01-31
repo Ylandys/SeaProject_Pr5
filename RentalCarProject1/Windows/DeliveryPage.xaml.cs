@@ -16,25 +16,24 @@ using System.Windows.Shapes;
 namespace RentalCarProject1.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для ProductsPage.xaml
+    /// Логика взаимодействия для DeliveryPage.xaml
     /// </summary>
-    public partial class ProductsPage : Page
+    public partial class DeliveryPage : Page
     {
         StorageSeaEntities1 db;
-        public ProductsPage()
+        public DeliveryPage()
         {
-            db = new StorageSeaEntities1();
             InitializeComponent();
-            TableProducts.ItemsSource = db.Products.ToList();
-
+            db = new StorageSeaEntities1();
+            TableDelivery.ItemsSource = db.Deliveries.ToList();
         }
 
-        private void btn_AddProducts(object sender, RoutedEventArgs e)
+        private void btn_AddDelivery(object sender, RoutedEventArgs e)
         {
-            var NewDob = new Product();
-            db.Products.Add(NewDob);
+            var NewDob = new Delivery();
+            db.Deliveries.Add(NewDob);
 
-            AddNewProduct newClientWindow = new AddNewProduct(db, NewDob);
+            AddNewDelivery newClientWindow = new AddNewDelivery(db, NewDob);
             newClientWindow.ShowDialog();
 
             refreshdatagrid();
@@ -43,23 +42,25 @@ namespace RentalCarProject1.Windows
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             Button r1 = sender as Button;
-            var r2 = r1.DataContext as Product;
-            var r3 = new AddNewProduct(db, r2);
+            var r2 = r1.DataContext as Delivery;
+            var r3 = new AddNewDelivery(db, r2);
             r3.ShowDialog();
-            TableProducts.ItemsSource = db.Products.ToList();
+            TableDelivery.ItemsSource = db.Deliveries.ToList();
+
+            refreshdatagrid();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             db = new StorageSeaEntities1();
-            Product item = TableProducts.SelectedItem as Product;
+            Delivery item = TableDelivery.SelectedItem as Delivery;
             try
             {
-                Product _product = db.Products.Where(d => d.id_product == item.id_product).Single();
-                db.Products.Remove(_product);
+                Delivery _delivery = db.Deliveries.Where(d => d.id_delivery == item.id_delivery).Single();
+                db.Deliveries.Remove(_delivery);
                 db.SaveChanges();
 
-                MessageBox.Show("Клиент успешно удалён!");
+                MessageBox.Show("Доставка успешно удалена!");
                 //Метод обновления таблицы после удаления
                 refreshdatagrid();
             }
@@ -72,8 +73,9 @@ namespace RentalCarProject1.Windows
 
         private void refreshdatagrid()
         {
-            TableProducts.ItemsSource = db.Products.ToList();
-            TableProducts.Items.Refresh();
+            TableDelivery.ItemsSource = db.Deliveries.ToList();
+            TableDelivery.Items.Refresh();
         }
+
     }
 }

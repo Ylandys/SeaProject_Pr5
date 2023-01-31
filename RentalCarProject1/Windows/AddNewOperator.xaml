@@ -1,0 +1,66 @@
+﻿<Window x:Class="RentalCarProject1.Windows.AddNewOperator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:RentalCarProject1.Windows"
+        mc:Ignorable="d"
+        Title="AddNewOperator" Height="700" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        AllowsTransparency="True" Background="Transparent">
+    
+    <Border Background="#eff2f7" CornerRadius="30">
+
+        <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost" Margin="0,0,80,-230" >
+
+
+            <StackPanel Margin="0,0,-75,248">
+
+                <materialDesign:PopupBox 
+                    PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" HorizontalAlignment="Right" Margin="0,10,0,0">
+                    <StackPanel>
+                        <Button x:Name="btn_exit" ToolTip="Закрывает приложение" Content="Выход" Click="btn_exitClick"/>
+                    </StackPanel>
+
+                </materialDesign:PopupBox>
+
+                <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="28"
+                FontWeight="Bold" Text="Добавление сотрудника"/>
+
+                <TextBlock FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Center"
+                Height="38" Width="366"><Run Text="Заполните все данные для добавления сотрудника"/> <LineBreak/></TextBlock>
+
+                <TextBox Margin="0 40 0 0" x:Name="operator_name" Width="300" FontSize="18" Text="{Binding operator_name}"
+                materialDesign:HintAssist.Hint="ФИО сотрудника" BorderThickness="2"
+                BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                />
+
+                <TextBox Margin="0 30 0 0" x:Name="operator_phone" Width="300" FontSize="18" Text="{Binding operator_phone}"
+                materialDesign:HintAssist.Hint="Телефон сотрудника" BorderThickness="2"
+                BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                />
+
+                <TextBox Margin="0 30 0 0" x:Name="role_id" Width="300" FontSize="18" Text="{Binding role_id}"
+                materialDesign:HintAssist.Hint="Роль сотрудника" BorderThickness="2"
+                BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                />
+
+                <TextBox Margin="0 30 0 0" x:Name="operator_login" Width="300" FontSize="18" Text="{Binding operator_login}"
+                materialDesign:HintAssist.Hint="Логин сотрудника" BorderThickness="2"
+                BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                />
+
+                <TextBox Margin="0 30 0 0" x:Name="operator_password" Width="300" FontSize="18" Text="{Binding operator_password}"
+                materialDesign:HintAssist.Hint="Пароль сотрудника" BorderThickness="2"
+                BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                />
+
+                <Button Margin="0,20,0,0" x:Name="AddOperatorButton" Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="15"
+                FontSize="18" Content="Добавить продукт" Cursor="Hand" Click="AddOperatorButton_Click"/>
+
+            </StackPanel>
+        </materialDesign:DialogHost>
+
+    </Border>
+</Window>

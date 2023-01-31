@@ -124,7 +124,7 @@ namespace RentalCarProject1.Windows
 
             if (roles == "Роль: Admin")
             {
-                Main.Content = new Delivery();
+                Main.Content = new DeliveryPage();
             }
             else
             {
