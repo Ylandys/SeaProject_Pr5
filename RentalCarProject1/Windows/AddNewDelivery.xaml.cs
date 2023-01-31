@@ -23,6 +23,7 @@ namespace RentalCarProject1.Windows
         StorageSeaEntities1 database;
         public AddNewDelivery(StorageSeaEntities1 db, Delivery delivery)
         {
+            //Make me happy :)
             InitializeComponent();
             this.database = db;
             this.DataContext = delivery;
