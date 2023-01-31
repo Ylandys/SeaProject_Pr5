@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.Remoting.Contexts;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -17,8 +18,8 @@ namespace RentalCarProject1.Windows
 
         public Clients()
         {
-            db = new StorageSeaEntities1();
             InitializeComponent();
+            db = new StorageSeaEntities1();
             TableCars.ItemsSource = db.Clients.ToList();
         }
 
@@ -70,6 +71,11 @@ namespace RentalCarProject1.Windows
         {
             TableCars.ItemsSource = db.Clients.ToList();
             TableCars.Items.Refresh();
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //Поиск
         }
     }
 }

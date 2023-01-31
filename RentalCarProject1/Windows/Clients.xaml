@@ -33,7 +33,7 @@
                 <!--.ZIndex="1" Text="Начать поиск..." Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty,Converter={StaticResource BooleanToVisibilityConverter}}"/> <!-->
 
                 <TextBox Width="300" TextAlignment="Center" x:Name="txtSearch" Style="{StaticResource textboxSearch }" HorizontalAlignment="Center"
-                         VerticalAlignment="Stretch" VerticalContentAlignment="Center" Height="49" Text="Поиск"/>
+                         VerticalAlignment="Stretch" VerticalContentAlignment="Center" Height="49" Text="Поиск" TextChanged="txtSearch_TextChanged"/>
                 <Icon:PackIconMaterial Kind="Magnify" Width="20" Height="30" VerticalAlignment="Center"
                                        Margin="0 0 15 0" Foreground="#b0b9c6" HorizontalAlignment="Right"/>
 
