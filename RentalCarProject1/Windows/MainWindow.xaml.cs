@@ -66,7 +66,7 @@ namespace RentalCarProject1
 
         private void helpMe(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ты можешь помочь сам себе)");
+            MessageBox.Show("Ты можешь помочь сам себе(Вообще посмотри в коде я оставил записки - комментариями)");
         }
 
         private void GuestButton_Click(object sender, RoutedEventArgs e)
@@ -106,6 +106,7 @@ namespace RentalCarProject1
                     IsMaximized = true;
                 }
             }
+            //I wanna die...
         }
     }
 }

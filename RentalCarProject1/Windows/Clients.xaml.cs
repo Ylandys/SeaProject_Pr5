@@ -46,7 +46,7 @@ namespace RentalCarProject1.Windows
                     db.SaveChanges();
 
                     MessageBox.Show("Клиент успешно удалён!");
-                    //Метод обновления таблицы после удаления
+                    //ЧТОО ПАСХАЛКА УЭНСДЕЙЙ???
                     refreshdatagrid();
                 }
 

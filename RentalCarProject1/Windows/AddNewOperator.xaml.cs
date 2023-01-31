@@ -34,6 +34,7 @@ namespace RentalCarProject1.Windows
             {
                 database.SaveChanges();
                 this.Close();
+                //How are u today, Elizabeth/Pavel, who read that(right now :3 )?
             }
             catch (DbEntityValidationException ex)
             {

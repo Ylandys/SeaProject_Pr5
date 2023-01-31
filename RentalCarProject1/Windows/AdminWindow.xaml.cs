@@ -59,7 +59,7 @@ namespace RentalCarProject1.Windows
                     this.Height = 720;
 
                     IsMaximized = false;
-
+                    //Я бы рассказал анекдот.. Но не буду - я это делаю уже 2 неделю из за того что времени нету, поймите правильно пхпх ))
                 }
                 else
                 {

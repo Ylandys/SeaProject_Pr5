@@ -43,6 +43,7 @@ namespace RentalCarProject1.Windows
                     MessageBox.Show("");
                     foreach (DbValidationError err in validationError.ValidationErrors)
                     {
+                        //Я ОБЯЗАТЕЛЬНО ВЫЖИВУ В ЭТОМ СЕМЕСТРЕ....
                         MessageBox.Show(err.ErrorMessage + "");
                     }
                 }

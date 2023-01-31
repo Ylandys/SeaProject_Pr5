@@ -60,3 +60,5 @@ namespace RentalCarProject1.Windows
         }
     }
 }
+
+//Ладно.. тут на русском напишу.. :)

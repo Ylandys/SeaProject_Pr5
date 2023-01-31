@@ -30,18 +30,18 @@
                 <TextBlock FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Center"
                 Height="38" Width="336"><Run Text="Заполните все данные для добавления склада"/> <LineBreak/></TextBlock>
 
-                <TextBox Margin="0 40 0 0" x:Name="product_name" Width="300" FontSize="18" Text="{Binding product_name}"
-                materialDesign:HintAssist.Hint="Название продукта" BorderThickness="2"
+                <TextBox Margin="0 40 0 0" x:Name="storage_name" Width="300" FontSize="18" Text="{Binding storage_name}"
+                materialDesign:HintAssist.Hint="Назваиние склада" BorderThickness="2"
                 BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 />
 
-                <TextBox Margin="0 30 0 0" x:Name="product_price" Width="300" FontSize="18" Text="{Binding product_price}"
-                materialDesign:HintAssist.Hint="Цена продукта" BorderThickness="2"
+                <TextBox Margin="0 30 0 0" x:Name="storage_address" Width="300" FontSize="18" Text="{Binding storage_address}"
+                materialDesign:HintAssist.Hint="Адрес склада" BorderThickness="2"
                 BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 />
 
-                <TextBox Margin="0 30 0 0" x:Name="product_quantity" Width="300" FontSize="18" Text="{Binding product_quantity}"
-                materialDesign:HintAssist.Hint="Кол-во ед. на складе" BorderThickness="2"
+                <TextBox Margin="0 30 0 0" x:Name="operator_name" Width="300" FontSize="18" Text="{Binding operator_name}"
+                materialDesign:HintAssist.Hint="Номер сотрудника" BorderThickness="2"
                 BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 />
 

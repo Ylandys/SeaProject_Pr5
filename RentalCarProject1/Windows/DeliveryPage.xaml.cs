@@ -76,6 +76,6 @@ namespace RentalCarProject1.Windows
             TableDelivery.ItemsSource = db.Deliveries.ToList();
             TableDelivery.Items.Refresh();
         }
-
+        //Just chill...
     }
 }
