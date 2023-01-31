@@ -59,8 +59,7 @@ namespace RentalCarProject1.Windows
                 db.Products.Remove(_product);
                 db.SaveChanges();
 
-                MessageBox.Show("Клиент успешно удалён!");
-                //Метод обновления таблицы после удаления
+                MessageBox.Show("Товар успешно удалён!");
                 refreshdatagrid();
             }
 
@@ -70,6 +69,7 @@ namespace RentalCarProject1.Windows
             }
         }
 
+                //Метод обновления таблицы после удаления
         private void refreshdatagrid()
         {
             TableProducts.ItemsSource = db.Products.ToList();

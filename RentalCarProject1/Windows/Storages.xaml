@@ -67,10 +67,10 @@
             </Grid>
             <DataGrid x:Name="TableStorages" Grid.Row="5" Grid.ColumnSpan="2" Margin="0,10,0,0" IsReadOnly="False" AutoGenerateColumns="False" Width="NaN" Height="NaN">
                 <DataGrid.Columns>
-                    <Design:DataGridTextColumn Width="*" x:Name="id_storage" Binding="{Binding id_storage}" Header="id_storage" IsReadOnly="True"/>
+                    <Design:DataGridTextColumn Width="*" x:Name="id_storage" Binding="{Binding id_storage}" Header="id storage" IsReadOnly="True"/>
                     <Design:DataGridTextColumn Width="*" x:Name="storage_name" Binding="{Binding storage_name}" Header="Название склада" IsReadOnly="False"/>
                     <Design:DataGridTextColumn Width="*" x:Name="storage_address" Binding="{Binding storage_address}" Header="Адрес склада" IsReadOnly="False"/>
-                    <Design:DataGridTextColumn Width="*" x:Name="operator_name" Binding="{Binding operator_name}" Header="id_Сотрудника" IsReadOnly="False"/>
+                    <Design:DataGridTextColumn Width="*" x:Name="operator_name" Binding="{Binding operator_name}" Header="id Сотрудника" IsReadOnly="False"/>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

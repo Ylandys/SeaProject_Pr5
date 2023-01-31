@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,38 @@ namespace RentalCarProject1.Windows
     /// </summary>
     public partial class AddNewStorage : Window
     {
-        public AddNewStorage()
+        StorageSeaEntities1 database;
+        public AddNewStorage(StorageSeaEntities1 db, Storage storage)
         {
             InitializeComponent();
+            this.database = db;
+            this.DataContext = storage;
+        }
+
+        private void AddStorageButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                database.SaveChanges();
+                this.Close();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (DbEntityValidationResult validationError in ex.EntityValidationErrors)
+                {
+                    MessageBox.Show("Object: " + validationError.Entry.Entity.ToString());
+                    MessageBox.Show("");
+                    foreach (DbValidationError err in validationError.ValidationErrors)
+                    {
+                        MessageBox.Show(err.ErrorMessage + "");
+                    }
+                }
+            }
+        }
+
+        private void btn_exitClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

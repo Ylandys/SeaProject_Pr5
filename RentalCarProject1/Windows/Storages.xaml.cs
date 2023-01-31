@@ -61,7 +61,13 @@ namespace RentalCarProject1.Windows
 
         private void btn_AddProducts(object sender, RoutedEventArgs e)
         {
+            var NewDob = new Storage();
+            db.Storages.Add(NewDob);
 
+            AddNewStorage addNewStorage= new AddNewStorage(db, NewDob);
+            addNewStorage.ShowDialog();
+
+            refreshdatagrid();
         }
 
         private void refreshdatagrid()

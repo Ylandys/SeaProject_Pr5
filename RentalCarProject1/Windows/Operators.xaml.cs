@@ -59,7 +59,7 @@ namespace RentalCarProject1.Windows
                 db.Operators.Remove(_operator);
                 db.SaveChanges();
 
-                MessageBox.Show("Клиент успешно удалён!");
+                MessageBox.Show("Сотрудник успешно удалён!");
                 //Метод обновления таблицы после удаления
                 refreshdatagrid();
             }
