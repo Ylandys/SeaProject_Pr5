@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Net.Sockets;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -21,28 +22,20 @@ namespace RentalCarProject1.Windows
             TableCars.ItemsSource = db.Clients.ToList();
         }
 
-        private void refreshdatagrid()
-        {
-            TableCars.ItemsSource = db.Clients.ToList();
-            TableCars.Items.Refresh();
-        }
-
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
 
-            Button reda = sender as Button;
-            var reda1 = reda.DataContext as Client;
-
-            AddNewClient newClientWindow = new AddNewClient(database, reda1);
-            newClientWindow.ShowDialog();
+            Button r1 = sender as Button;
+            var r2 = r1.DataContext as Client;
+            var r3 = new AddNewClient(db, r2);
+            r3.ShowDialog();
+            TableCars.ItemsSource = db.Clients.ToList();
 
             refreshdatagrid();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            
-
                 db = new StorageSeaEntities1();
                 Client item = TableCars.SelectedItem as Client;
                 try
@@ -64,11 +57,19 @@ namespace RentalCarProject1.Windows
 
         private void btn_AddClient(object sender, RoutedEventArgs e)
         {
+            var NewDob = new Client();
+            db.Clients.Add(NewDob);
 
-            AddNewClient newClientWindow = new AddNewClient();
+            AddNewClient newClientWindow = new AddNewClient(db, NewDob);
             newClientWindow.ShowDialog();
 
             refreshdatagrid();
+        }
+
+        private void refreshdatagrid()
+        {
+            TableCars.ItemsSource = db.Clients.ToList();
+            TableCars.Items.Refresh();
         }
     }
 }

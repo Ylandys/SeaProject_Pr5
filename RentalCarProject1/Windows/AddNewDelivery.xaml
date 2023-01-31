@@ -1,21 +1,21 @@
-﻿<Window
+﻿<Window x:Class="RentalCarProject1.Windows.AddNewDelivery"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RentalCarProject1.Windows"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
-        x:Class="RentalCarProject1.Windows.AddNewClient"
         mc:Ignorable="d"
         Height="684" Width="480" WindowStartupLocation="CenterScreen" WindowStyle="None"
         AllowsTransparency="True" Background="Transparent">
 
-    <Border Background="#eff2f7" CornerRadius="30" MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftDown">
+    <Border Background="#eff2f7" CornerRadius="30">
 
         <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost" Margin="0,0,80,-230" >
 
 
-            <StackPanel MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftDown" Margin="50,0,-50,248">
+            <StackPanel Margin="50,0,-50,248">
 
                 <materialDesign:PopupBox 
                     PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" HorizontalAlignment="Right" Margin="0,10,0,0">
@@ -26,34 +26,34 @@
                 </materialDesign:PopupBox>
 
                 <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center" FontSize="28"
-                FontWeight="Bold" Text="Добавление клиента"/>
+                FontWeight="Bold" Text="Добавление доставки"/>
 
                 <TextBlock FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center"
-                Text="Заполните все данные для добавления клиента"/>
+                Text="Заполните все данные для добавления доставки"/>
 
-                <TextBox Margin="0 40 0 0" x:Name="client_name" Width="300" FontSize="18" Text="{Binding client_name}"
-                materialDesign:HintAssist.Hint="ФИО клиента" BorderThickness="2"
+                <TextBox Margin="0 40 0 0" x:Name="id_Client" Width="300" FontSize="18"
+                materialDesign:HintAssist.Hint="Номер клиента" BorderThickness="2"
                 BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 />
 
-                <TextBox Margin="0 30 0 0" x:Name="client_address" Width="300" FontSize="18" Text="{Binding client_address}"
-                materialDesign:HintAssist.Hint="Адрес клиента" BorderThickness="2"
+                <TextBox Margin="0 30 0 0" x:Name="id_Product" Width="300" FontSize="18"
+                materialDesign:HintAssist.Hint="Номер продукта" BorderThickness="2"
                 BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 />
 
-                <TextBox Margin="0 30 0 0" x:Name="client_phone" Width="300" FontSize="18" Text="{Binding client_phone}"
-                materialDesign:HintAssist.Hint="Телефон клиента" BorderThickness="2"
+                <TextBox Margin="0 30 0 0" x:Name="id_Storage" Width="300" FontSize="18"
+                materialDesign:HintAssist.Hint="Номер склада" BorderThickness="2"
                 BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 />
 
-                <TextBox Margin="0 30 0 0" x:Name="store_name" Width="300" FontSize="18" Text="{Binding store_name}"
-                materialDesign:HintAssist.Hint="Название магазина" BorderThickness="2"
+                <TextBox Margin="0 30 0 0" x:Name="Delivery_Price" Width="300" FontSize="18"
+                materialDesign:HintAssist.Hint="Цена доставки" BorderThickness="2"
                 BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 />
 
                 <Button Margin="0,20,0,0" x:Name="AddClientButton" Style="{StaticResource MaterialDesignFlatMidBgButton}"
                 materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="15"
-                FontSize="18" Content="Добавить клиента" Cursor="Hand" Click="btn_addClient" />
+                FontSize="18" Content="Добавить доставку" Cursor="Hand" Click="btn_addDelivery" />
 
             </StackPanel>
         </materialDesign:DialogHost>

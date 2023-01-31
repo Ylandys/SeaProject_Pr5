@@ -30,17 +30,44 @@ namespace RentalCarProject1.Windows
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
+            db = new StorageSeaEntities1();
 
+            Storage item = TableStorages.SelectedItem as Storage;
+            Storage storages = db.Storages.Where(c => c.id_storage == item.id_storage).Single();
+            db.SaveChanges();
+            refreshdatagrid();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+            db = new StorageSeaEntities1();
+            Storage item = TableStorages.SelectedItem as Storage;
+            try
+            {
+                Storage storages = db.Storages.Where(c => c.id_storage == item.id_storage).Single();
+                db.Storages.Remove(storages);
+                db.SaveChanges();
 
+                MessageBox.Show("Клиент успешно удалён!");
+                //Метод обновления таблицы после удаления
+                refreshdatagrid();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_AddProducts(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void refreshdatagrid()
+        {
+            TableStorages.ItemsSource = db.Storages.ToList();
+            TableStorages.Items.Refresh();
         }
     }
 }

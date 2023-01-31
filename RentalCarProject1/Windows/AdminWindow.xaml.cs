@@ -120,7 +120,16 @@ namespace RentalCarProject1.Windows
 
         private void btn_Delivery_Click(object sender, RoutedEventArgs e)
         {
+            string roles = Role.Text;
 
+            if (roles == "Роль: Admin")
+            {
+                Main.Content = new Delivery();
+            }
+            else
+            {
+                MessageBox.Show("Недостаточно прав для совершения этой операции!");
+            }
         }
 
         private void btn_Operators_Click(object sender, RoutedEventArgs e)

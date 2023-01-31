@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Entity.Validation;
+using System.Runtime.Remoting.Contexts;
 using System.Windows;
 using System.Windows.Input;
 
@@ -9,13 +11,13 @@ namespace RentalCarProject1.Windows
     /// </summary>
     public partial class AddNewClient : Window
     {
-        StorageSeaEntities1 db;
-        public AddNewClient()
+        StorageSeaEntities1 database;
+        public AddNewClient(StorageSeaEntities1 db, Client reda1)
         {
+            this.DataContext = reda1;
+            this.database = db;
             InitializeComponent();
-            db = new StorageSeaEntities1();
         }
-
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -23,53 +25,30 @@ namespace RentalCarProject1.Windows
                 this.DragMove();
         }
 
-        private bool IsMaximized = true;
-
         private void Border_MouseLeftDown(object sender, MouseButtonEventArgs e)
         {
-
-            if (e.ClickCount == 2)
-            {
-                if (IsMaximized)
-                {
-                    this.WindowState = WindowState.Normal;
-                    this.Width = 480;
-                    this.Height = 684;
-
-                    IsMaximized = false;
-                }
-                else
-                {
-                    this.WindowState = WindowState.Maximized;
-                    IsMaximized = true;
-                }
-            }
         }
 
-        private void btn_addClient(object sender, RoutedEventArgs e)
+        public void btn_addClient(object sender, RoutedEventArgs e)
         {
-           /* Car car= new Car();
-
-            //Добавление вводимых данных в базу
-            car.car_model= car_model.Text;
-            car.car_color= car_color.Text;
-            car.car_year= DateTime.Parse(car_year.Text);
-            car.car_number = car_number.Text;
-
-            MessageBox.Show("Машина успешно добавлена!");
 
             try
             {
-                db.Cars.Add(car);
-                db.SaveChanges();
+                database.SaveChanges();
                 this.Close();
             }
-            catch (Exception ex)
+            catch (DbEntityValidationException ex)
             {
-
-                MessageBox.Show(ex.Message);
+                foreach (DbEntityValidationResult validationError in ex.EntityValidationErrors)
+                {
+                    MessageBox.Show("Object: " + validationError.Entry.Entity.ToString());
+                    MessageBox.Show("");
+                    foreach (DbValidationError err in validationError.ValidationErrors)
+                    {
+                        MessageBox.Show(err.ErrorMessage + "");
+                    }
+                }
             }
-           */
         }
 
         private void btn_exitClick(object sender, RoutedEventArgs e)
